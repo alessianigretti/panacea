@@ -1,0 +1,4 @@
+<svg>
+  <text id="hrm-label" class="sensor-label" x="50%" y="110">heart rate</text>
+  <text id="hrm-data" class="sensor-data" x="50%" y="145">{ ... }</text>
+</svg>
