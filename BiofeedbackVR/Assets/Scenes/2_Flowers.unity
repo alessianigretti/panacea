@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.34117648, g: 1, b: 0.8313726, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -319,7 +319,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.7720864
+      value: -4.72
       objectReference: {fileID: 0}
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 390701395}
   - component: {fileID: 390701394}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Breath Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1089,13 +1089,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 390701392}
-  m_LocalRotation: {x: -0.6977866, y: 0.00029877128, z: 0.00065989705, w: 0.7163054}
-  m_LocalPosition: {x: 0, y: -0.16999996, z: 1.5700002}
+  m_LocalRotation: {x: -0.6626683, y: 0.00026681396, z: 0.0006734528, w: 0.7489127}
+  m_LocalPosition: {x: 0, y: -0.16999996, z: 0.9699998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 381985993}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -88.499, y: -1.0780001, z: 1.156}
+  m_LocalEulerAnglesHint: {x: -83.007, y: -0.23200001, z: 0.30800003}
 --- !u!199 &390701394
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -1165,7 +1165,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 0
@@ -4004,7 +4004,7 @@ ParticleSystem:
     positionAmount:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.013
+      scalar: 0.005
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4877,11 +4877,11 @@ ParticleSystem:
   TrailModule:
     enabled: 1
     mode: 0
-    ratio: 0.2
+    ratio: 0.4
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.001
+      scalar: 0.8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -6046,6 +6046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667194179}
   - component: {fileID: 667194178}
+  - component: {fileID: 667194180}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -6103,6 +6104,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &667194180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 667194177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d0fc73949bdcc44952e8bdfd55b4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DurationInSeconds: 20
 --- !u!1001 &688912715
 Prefab:
   m_ObjectHideFlags: 0
@@ -6202,7 +6215,7 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: -0.21515834, y: 0, z: -3.6165419}
     roll: 0
-  - position: {x: -0.19800985, y: 0, z: 64.59427}
+  - position: {x: -0.19800985, y: 0, z: 27.86859}
     roll: 0
 --- !u!4 &733595740
 Transform:
@@ -6226,7 +6239,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.98
+      value: 4.78
       objectReference: {fileID: 0}
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6687,7 +6700,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.58490574
+      value: 2.18
       objectReference: {fileID: 0}
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7311,7 +7324,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.23
+      value: -3.65
       objectReference: {fileID: 0}
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7496,7 +7509,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.1
+      value: -7.45
       objectReference: {fileID: 0}
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7886,7 +7899,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.41
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8221,7 +8234,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.58490574
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 4357963170113784, guid: 1abe7997742d6814789537d59ee6f423, type: 2}
       propertyPath: m_LocalPosition.y
