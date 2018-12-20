@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b2605010d843dd4396ebf36639c44c2
+guid: f2494b4a8d9d77341b9ff968a4adbb3d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -9,93 +9,28 @@ ModelImporter:
     100006: Object003
     100008: Object004
     100010: Object005
-    100012: Object007
-    100014: Object008
-    100016: Object009
-    100018: Object010
-    100020: Object011
-    100022: Object012
-    100024: Object013
-    100026: Object014
-    100028: Object015
-    100030: Object016
-    100032: Object017
-    100034: Object018
-    100036: Object019
     400000: //RootNode
     400002: Object001
     400004: Object002
     400006: Object003
     400008: Object004
     400010: Object005
-    400012: Object007
-    400014: Object008
-    400016: Object009
-    400018: Object010
-    400020: Object011
-    400022: Object012
-    400024: Object013
-    400026: Object014
-    400028: Object015
-    400030: Object016
-    400032: Object017
-    400034: Object018
-    400036: Object019
     2100000: e0abbc800f80e85449708924a0863dcc_Petal
     2300000: Object001
     2300002: Object002
     2300004: Object003
     2300006: Object004
     2300008: Object005
-    2300010: Object007
-    2300012: Object008
-    2300014: Object009
-    2300016: Object010
-    2300018: Object011
-    2300020: Object012
-    2300022: Object013
-    2300024: Object014
-    2300026: Object015
-    2300028: Object016
-    2300030: Object017
-    2300032: Object018
-    2300034: Object019
     3300000: Object001
     3300002: Object002
     3300004: Object003
     3300006: Object004
     3300008: Object005
-    3300010: Object007
-    3300012: Object008
-    3300014: Object009
-    3300016: Object010
-    3300018: Object011
-    3300020: Object012
-    3300022: Object013
-    3300024: Object014
-    3300026: Object015
-    3300028: Object016
-    3300030: Object017
-    3300032: Object018
-    3300034: Object019
     4300000: Object001
     4300002: Object002
     4300004: Object003
     4300006: Object004
     4300008: Object005
-    4300010: Object007
-    4300012: Object008
-    4300014: Object009
-    4300016: Object010
-    4300018: Object011
-    4300020: Object012
-    4300022: Object013
-    4300024: Object014
-    4300026: Object015
-    4300028: Object016
-    4300030: Object017
-    4300032: Object018
-    4300034: Object019
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -107,7 +42,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 1
+    resampleCurves: 0
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
