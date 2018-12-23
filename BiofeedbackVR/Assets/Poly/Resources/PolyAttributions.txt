@@ -1,7 +1,0 @@
-This project uses the following items from Poly (http://poly.google.com):
-
-Title: HOD Hive Mind LOW by Sutu
-Author: Sutu Eats Flies
-URL: https://poly.google.com/view/dFr-rkWK77s
-License: Creative Commons CC-BY
-https://creativecommons.org/licenses/by/3.0/legalcode
