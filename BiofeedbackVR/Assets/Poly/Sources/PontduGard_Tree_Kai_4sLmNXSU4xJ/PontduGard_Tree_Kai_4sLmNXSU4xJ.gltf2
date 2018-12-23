@@ -1,0 +1,289 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5123,
+      "count": 70593,
+      "max": [
+        14911.0
+      ],
+      "min": [
+        0.0
+      ],
+      "name": "buffer-0-group-0-mesh-0-indices",
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "count": 14912,
+      "max": [
+        3.6857779026031494,
+        5.783703804016113,
+        -1.7017929553985596
+      ],
+      "min": [
+        -4.78842306137085,
+        -3.8182051181793213,
+        -11.222938537597656
+      ],
+      "name": "buffer-0-group-0-mesh-0-position",
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 178944,
+      "componentType": 5126,
+      "count": 14912,
+      "max": [
+        0.999876856803894,
+        0.9999942779541016,
+        0.9998597502708435
+      ],
+      "min": [
+        -0.9999299645423889,
+        -0.9998661279678345,
+        -0.9999293684959412
+      ],
+      "name": "buffer-0-group-0-mesh-0-normal",
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "count": 14912,
+      "max": [
+        0.9991419911384583,
+        -0.0039059999398887157
+      ],
+      "min": [
+        0.0018909999635070562,
+        -0.9994189739227295
+      ],
+      "name": "buffer-0-group-0-mesh-0-texcoord",
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 141186,
+      "componentType": 5123,
+      "count": 79404,
+      "max": [
+        19328.0
+      ],
+      "min": [
+        0.0
+      ],
+      "name": "buffer-0-group-1-mesh-0-indices",
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 357888,
+      "componentType": 5126,
+      "count": 19329,
+      "max": [
+        3.7070200443267822,
+        6.180169105529785,
+        -0.8701300024986267
+      ],
+      "min": [
+        -4.796113014221191,
+        -3.594705104827881,
+        -11.157600402832031
+      ],
+      "name": "buffer-0-group-1-mesh-0-position",
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 589836,
+      "componentType": 5126,
+      "count": 19329,
+      "max": [
+        0.9999191761016846,
+        0.9998109340667725,
+        0.9998594522476196
+      ],
+      "min": [
+        -0.9997861385345459,
+        -0.9998661279678345,
+        -0.9996218681335449
+      ],
+      "name": "buffer-0-group-1-mesh-0-normal",
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 119296,
+      "componentType": 5126,
+      "count": 19329,
+      "max": [
+        0.9940909743309021,
+        -0.0039059999398887157
+      ],
+      "min": [
+        0.0022330000065267086,
+        -0.9993730187416077
+      ],
+      "name": "buffer-0-group-1-mesh-0-texcoord",
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Obj2GltfConverter",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 299994,
+      "byteOffset": 0,
+      "name": "buffer-0-bufferview-ushort",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 821784,
+      "byteOffset": 300000,
+      "byteStride": 12,
+      "name": "buffer-0-bufferview-vec3",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 273928,
+      "byteOffset": 1121784,
+      "byteStride": 8,
+      "name": "buffer-0-bufferview-vec2",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1395712,
+      "name": "buffer-0",
+      "uri": "FrenchTree_PontDuGard_LOWMESH_textured.bin"
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured-diffuse-image",
+      "uri": "FrenchTree_PontDuGard_LOWMESH_textured.png"
+    },
+    {
+      "mimeType": "image/png",
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured1-diffuse-image",
+      "uri": "FrenchTree_PontDuGard_LOWMESH_textured1.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 1.0
+      }
+    },
+    {
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured1",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 1.0
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "buffer-0-mesh-0",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        },
+        {
+          "attributes": {
+            "POSITION": 5,
+            "NORMAL": 6,
+            "TEXCOORD_0": 7
+          },
+          "indices": 4,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "node-0"
+    }
+  ],
+  "samplers": [
+    {
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured-diffuse-sampler",
+      "wrapS": 10497,
+      "wrapT": 10497
+    },
+    {
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured1-diffuse-sampler",
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scenes": [
+    {
+      "name": "scene-0",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured-diffuse-texture",
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "name": "FrenchTree_PontDuGard_LOWMESH_textured1-diffuse-texture",
+      "sampler": 1,
+      "source": 1
+    }
+  ]
+}
