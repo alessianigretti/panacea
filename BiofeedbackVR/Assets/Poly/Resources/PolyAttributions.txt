@@ -1,5 +1,11 @@
 This project uses the following items from Poly (http://poly.google.com):
 
+Title: Galaxy WIP
+Author: Robin Huse
+URL: https://poly.google.com/view/3jZBxw4A7Jx
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: green and white flower
 Author: Jeremy Eyring
 URL: https://poly.google.com/view/7EBia-i9K0f
@@ -12,9 +18,9 @@ URL: https://poly.google.com/view/cc6nkIv7A-Y
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
-Title: PontduGard_Tree
-Author: Kai
-URL: https://poly.google.com/view/4sLmNXSU4xJ
+Title: Moon
+Author: Evol Love
+URL: https://poly.google.com/view/2EhP02d7Jg6
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
