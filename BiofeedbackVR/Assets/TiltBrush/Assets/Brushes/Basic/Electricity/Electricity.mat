@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Electricity
   m_Shader: {fileID: 4800000, guid: 698f6f8dc012a8b4e9d6f36db04f0dd3, type: 3}
@@ -28,7 +28,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _DisplacementIntensity: 2
-    - _EmissionGain: 0.2
+    - _EmissionGain: 0.02
     - _EmissionScroll1: 15
     - _EmissionScroll2: -10
     - _InvFade: 1
