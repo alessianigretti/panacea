@@ -17,6 +17,8 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: 0f438fafc0902c545b05266f5607a5dc
     name: Pitch
+  - guid: 6e575f6a9ae0513448f7866fbe73625a
+    name: MyExposedParam
   m_AudioMixerGroupViews:
   - guids:
     - 82de0aef58b08a9478ba6427c889a580
@@ -36,6 +38,7 @@ AudioMixerGroupController:
   m_Pitch: 0f438fafc0902c545b05266f5607a5dc
   m_Effects:
   - {fileID: 24400004}
+  - {fileID: 244920302367739556}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -88,3 +91,18 @@ AudioMixerSnapshotController:
     dfd3cabf4b1112c42a3cbe0051f516a9: 9.5
     e7e1dadf73be07646afd717844b9798e: 0
   m_TransitionOverrides: {}
+--- !u!244 &244920302367739556
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: f54af214357adc941aff8ea4e889260b
+  m_EffectName: Distortion
+  m_MixLevel: 5b4afd12efd1cd14e82cc3fd8a4bf70c
+  m_Parameters:
+  - m_ParameterName: Level
+    m_GUID: 6e575f6a9ae0513448f7866fbe73625a
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
