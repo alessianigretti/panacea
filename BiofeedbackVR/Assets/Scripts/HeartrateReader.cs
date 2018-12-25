@@ -1,23 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.Networking;
 
-public class AudioMixerController : MonoBehaviour
+public class HeartrateReader : MonoBehaviour
 {
-    public AudioMixer m_AudioMixer;
     public string m_Url;
 
-    private AudioEvolution m_GA;
     private int m_Heartrate;
-    private float m_ExposedPitch;
-
-    void Start()
-    {
-        m_GA = new AudioEvolution(this);
-        bool result = m_AudioMixer.GetFloat("Pitch", out m_ExposedPitch);
-        Debug.Log(m_ExposedPitch);
-    }
 
     void Update()
     {

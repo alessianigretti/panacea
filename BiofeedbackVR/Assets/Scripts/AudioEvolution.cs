@@ -1,25 +1,30 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioEvolution : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioMixer m_AudioMixer;
+
+    [Header("Evolution")]
+    public HeartrateReader m_HeartrateReader;
     public int m_Iterations;
     public int m_PopulationSize;
     [Range(0f, 1f)]
     public float m_CrossoverProbability, m_MutationProbability;
     public float m_MinValue, m_MaxValue;
 
-    private AudioMixerController m_Controller;
-    private Genotype[] m_Population;
-    private int m_PreviousGenotypeIndex, m_CurrentGenotypeIndex;
+    private float m_ExposedPitch, m_ExposedDistortion;
+    private int m_ExposedParametersQnty = 2;
+    private Genotype m_Genotype, m_CurrentCopy;
 
     public struct Genotype
     {
         private float[] features;
-        private float fitness;
+        private int fitness;
 
-        public float Fitness
+        public int Fitness
         {
             get
             {
@@ -46,66 +51,88 @@ public class AudioEvolution : MonoBehaviour
         }
     }
 
-    public AudioEvolution(AudioMixerController controller)
-    {
-        m_Controller = controller;
-    }
-
     private void Start()
     {
-        m_Population = CreatePopulation(m_PopulationSize, m_MinValue, m_MaxValue);
+        //m_Population = CreatePopulation(m_PopulationSize, m_MinValue, m_MaxValue);
+        m_Genotype = CreateGenotype(m_MinValue, m_MaxValue);
 
-        for (int i = 0; i < m_Iterations; i++)
-        {
-            Evolve();
-        }
+        m_AudioMixer.SetFloat("Pitch", m_Genotype.Features[0]);
+        m_AudioMixer.SetFloat("Distortion", m_Genotype.Features[1]);
+
+        FirstEvaluation();
     }
 
-    private Genotype[] CreatePopulation(int size, float min, float max)
+    private Genotype CreateGenotype(float min, float max)
     {
-        Genotype[] population = new Genotype[size];
+        Genotype genotype = new Genotype();
 
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < m_ExposedParametersQnty; i++)
         {
-            for (int j = 0; j < population[i].Features.Length; j++)
-            {
-                population[i].Features[j] = Random.Range(min, max);
-            }
+            genotype.Features[i] = Random.Range(min, max);
         }
 
-        return population;
+        return genotype;
     }
 
-    private void Evolve()
+    private void FirstEvaluation()
     {
-        int newIndex = Random.Range(0, m_Population.Length);
-        Genotype current = m_Population[m_CurrentGenotypeIndex];
-        Genotype newGenotype = m_Population[newIndex];
-
-        for (int i = 0; i < current.Features.Length; i++)
-        {
-            // crossover
-            if (Random.Range(0f, 1f) < m_CrossoverProbability)
-            {
-                float newGene = newGenotype.Features[i];
-                current.Features[i] = newGene;
-            }
-
-            // mutation
-            if (Random.Range(0f, 1f) < m_MutationProbability)
-            {
-                float newGene = Random.Range(m_MinValue, m_MaxValue);
-                current.Features[i] = newGene;
-            }
-        }
-
         StartCoroutine(RecordFitness(60f));
     }
 
     IEnumerator RecordFitness(float time)
     {
         yield return new WaitForSeconds(time);
+        Debug.Log("60 seconds, fitness: " + m_HeartrateReader.GetHeartrate());
 
-        m_Population[m_CurrentGenotypeIndex].Fitness = m_Controller.GetHeartrate();
+        m_CurrentCopy.Fitness = m_HeartrateReader.GetHeartrate();
+
+        CompareFitness();
+    }
+
+    private void Evolve()
+    {
+        m_CurrentCopy = m_Genotype;
+
+        /*int[] validIndices = new int[m_Population.Length - 1];
+        for (int i = 0; i < validIndices.Length; i++)
+        {
+            if (i != m_CurrentGenotypeIndex)
+            {
+                validIndices[i] = i;
+            }
+        }
+        m_NewIndex = validIndices[Random.Range(0, validIndices.Length)];
+        Genotype newGenotype = m_Population[m_NewIndex];*/
+
+        for (int i = 0; i < m_ExposedParametersQnty; i++)
+        {
+            // crossover was useless because we're not using the whole pool anyway
+            /*if (Random.Range(0f, 1f) < m_CrossoverProbability)
+            {
+                float newGene = newGenotype.Features[i];
+                m_CurrentCopy.Features[i] = newGene;
+            }*/
+
+            // mutation
+            if (Random.Range(0f, 1f) < m_MutationProbability)
+            {
+                m_CurrentCopy.Features[i] = Random.Range(m_MinValue, m_MaxValue);
+            }
+        }
+        
+        m_AudioMixer.SetFloat("Pitch", m_CurrentCopy.Features[0]);
+        m_AudioMixer.SetFloat("Distortion", m_CurrentCopy.Features[1]);
+
+        StartCoroutine(RecordFitness(60f));
+    }
+
+    private void CompareFitness()
+    {
+        if (m_Genotype.Fitness > m_CurrentCopy.Fitness || m_Genotype.Fitness == 0)
+        {
+            m_Genotype = m_CurrentCopy;
+        }
+
+        Evolve();
     }
 }
