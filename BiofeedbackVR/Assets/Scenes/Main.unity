@@ -44626,7 +44626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AudioMixer: {fileID: 24100000, guid: 4025127d859fc3e41bcd87bb5fc5af62, type: 2}
   m_HeartrateReader: {fileID: 305473506}
-  m_MutationProbability: 0.19
+  m_MutationProbability: 0.883
   m_MinValue: 0
   m_MaxValue: 10
   m_RecordTime: 10

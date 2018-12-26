@@ -13,8 +13,7 @@ public class AudioEvolution : MonoBehaviour
     public float m_MutationProbability;
     public float m_MinValue, m_MaxValue;
     public float m_RecordTime = 60f;
-    
-    private int m_ExposedParametersQnty = 2;
+
     private Genotype m_Genotype, m_CurrentCopy;
 
     public struct Genotype
@@ -64,12 +63,10 @@ public class AudioEvolution : MonoBehaviour
     {
         Genotype genotype = new Genotype();
 
-        genotype.Features = new float[m_ExposedParametersQnty];
+        genotype.Features = new float[2];
 
-        for (int i = 0; i < m_ExposedParametersQnty; i++)
-        {
-            genotype.Features[i] = Random.Range(min, max);
-        }
+        genotype.Features[0] = Random.Range(min, max);
+        genotype.Features[1] = Random.Range(min, max);
 
         return genotype;
     }
@@ -93,21 +90,13 @@ public class AudioEvolution : MonoBehaviour
     {
         m_CurrentCopy = m_Genotype;
 
-        m_CurrentCopy.Features = new float[m_ExposedParametersQnty];
-
-        for (int i = 0; i < m_ExposedParametersQnty; i++)
-        {
-            // crossover was useless because we're not using the whole population pool anyway
+        // crossover was useless because we're not using the whole population pool anyway
             
-            // mutation
-            if (Random.Range(0f, 1f) < m_MutationProbability)
-            {
-                m_CurrentCopy.Features[i] = Random.Range(m_MinValue, m_MaxValue);
-            }
-            else
-            {
-                m_CurrentCopy.Features[i] = m_Genotype.Features[i];
-            }
+        // mutation
+        if (Random.Range(0f, 1f) < m_MutationProbability)
+        {
+            m_CurrentCopy.Features[0] = Random.Range(m_MinValue, m_MaxValue);
+            m_CurrentCopy.Features[1] = Random.Range(m_MinValue, m_MaxValue);
         }
         
         m_AudioMixer.SetFloat("Pitch", m_CurrentCopy.Features[0]);
@@ -118,7 +107,12 @@ public class AudioEvolution : MonoBehaviour
 
     private void CompareFitness()
     {
-        if (m_Genotype.Fitness > m_CurrentCopy.Fitness || m_Genotype.Fitness == 0)
+        if (m_Genotype.Fitness == 0)
+        {
+            m_Genotype.Fitness = m_CurrentCopy.Fitness;
+            Debug.Log("Initial fitness: " + m_Genotype.Fitness);
+        }
+        else if (m_Genotype.Fitness > m_CurrentCopy.Fitness)
         {
             m_Genotype = m_CurrentCopy;
             Debug.Log("Fitness chosen: new - " + m_Genotype.Fitness);
