@@ -18,7 +18,7 @@ AudioMixerController:
   - guid: 0f438fafc0902c545b05266f5607a5dc
     name: Pitch
   - guid: 6e575f6a9ae0513448f7866fbe73625a
-    name: MyExposedParam
+    name: Distortion
   m_AudioMixerGroupViews:
   - guids:
     - 82de0aef58b08a9478ba6427c889a580

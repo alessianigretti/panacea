@@ -4,18 +4,25 @@ using UnityEngine.Networking;
 
 public class HeartrateReader : MonoBehaviour
 {
-    public string m_Url;
+    public string m_Url = "https://clever-deer-30.localtunnel.me/heartrate/GET";
 
     private int m_Heartrate;
 
-    void Update()
+    void Start()
     {
-        StartCoroutine(GetInfo());
+        StartCoroutine(Wait(.5f));
     }
 
     public int GetHeartrate()
     {
         return m_Heartrate;
+    }
+
+    IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        StartCoroutine(GetInfo());
     }
 
     IEnumerator GetInfo()
@@ -25,6 +32,8 @@ public class HeartrateReader : MonoBehaviour
         yield return www.SendWebRequest();
 
         m_Heartrate = System.Convert.ToInt32(www.downloadHandler.text);
-        Debug.Log(m_Heartrate);
+        //Debug.Log(m_Heartrate);
+
+        StartCoroutine(Wait(1f));
     }
 }
