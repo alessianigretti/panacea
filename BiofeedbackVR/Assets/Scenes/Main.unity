@@ -44612,7 +44612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1549326681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44625,10 +44625,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AudioMixer: {fileID: 24100000, guid: 4025127d859fc3e41bcd87bb5fc5af62, type: 2}
+  m_MinPitch: 50
+  m_MaxPitch: 150
+  m_MinWetmix: 0
+  m_MaxWetmix: 100
+  m_MinResonance: 1
+  m_MaxResonance: 10
+  m_MinDepth: 0
+  m_MaxDepth: 1
   m_HeartrateReader: {fileID: 305473506}
   m_MutationProbability: 0.883
-  m_MinValue: 0
-  m_MaxValue: 10
   m_RecordTime: 10
 --- !u!4 &1549326682
 Transform:
