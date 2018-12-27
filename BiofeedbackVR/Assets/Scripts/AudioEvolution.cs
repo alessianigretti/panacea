@@ -73,8 +73,8 @@ public class AudioEvolution : MonoBehaviour
 
         genotype.Features = new float[4];
 
-        genotype.Features[0] = Random.Range(m_MinPitch, m_MaxPitch);
-        genotype.Features[1] = Random.Range(m_MinWetmix, m_MaxWetmix);
+        genotype.Features[0] = Random.Range(m_MinPitch, m_MaxPitch) / 100f;
+        genotype.Features[1] = Random.Range(m_MinWetmix, m_MaxWetmix) / 100f;
         genotype.Features[2] = Random.Range(m_MinResonance, m_MaxResonance);
         genotype.Features[3] = Random.Range(m_MinDepth, m_MaxDepth);
 
@@ -104,8 +104,8 @@ public class AudioEvolution : MonoBehaviour
         // mutation
         if (Random.Range(0f, 1f) < m_MutationProbability)
         {
-            m_CurrentCopy.Features[0] = Random.Range(m_MinPitch, m_MaxPitch);
-            m_CurrentCopy.Features[1] = Random.Range(m_MinWetmix, m_MaxWetmix);
+            m_CurrentCopy.Features[0] = Random.Range(m_MinPitch, m_MaxPitch) / 100f;
+            m_CurrentCopy.Features[1] = Random.Range(m_MinWetmix, m_MaxWetmix) / 100f;
             m_CurrentCopy.Features[2] = Random.Range(m_MinResonance, m_MaxResonance);
             m_CurrentCopy.Features[3] = Random.Range(m_MinDepth, m_MaxDepth);
         }

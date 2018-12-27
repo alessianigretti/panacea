@@ -31,8 +31,14 @@ public class HeartrateReader : MonoBehaviour
 
         yield return www.SendWebRequest();
 
-        m_Heartrate = System.Convert.ToInt32(www.downloadHandler.text);
+        //m_Heartrate = System.Convert.ToInt32(www.downloadHandler.text);
         //Debug.Log(m_Heartrate);
+
+        int hr;
+        if (System.Int32.TryParse(www.downloadHandler.text, out hr))
+        {
+            m_Heartrate = hr;
+        }
 
         StartCoroutine(Wait(1f));
     }
