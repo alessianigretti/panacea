@@ -8,22 +8,28 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/1_Sun.unity
+  - enabled: 0
+    path: Assets/Scenes Take 1/1_Sun.unity
     guid: 144792c20eec9e240bc8ff24731e7122
-  - enabled: 1
-    path: Assets/Scenes/2_Flowers.unity
+  - enabled: 0
+    path: Assets/Scenes Take 1/2_Flowers.unity
     guid: 4bc648b7ff0e87948b9a2b5b576fde61
-  - enabled: 1
-    path: Assets/Scenes/3_Blooming.unity
+  - enabled: 0
+    path: Assets/Scenes Take 1/3_Blooming.unity
     guid: 70ed6d77ee807854485f5f209fd779f6
-  - enabled: 1
-    path: Assets/Scenes/4_InsideBloom.unity
+  - enabled: 0
+    path: Assets/Scenes Take 1/4_InsideBloom.unity
     guid: df362e26713f2bf4dabfb4a948c9cf19
-  - enabled: 1
-    path: Assets/Scenes/5_Clouds.unity
+  - enabled: 0
+    path: Assets/Scenes Take 1/5_Clouds.unity
     guid: bb194977a1512c6438bf16b79008d08b
-  - enabled: 1
-    path: Assets/Scenes/6_Underwater.unity
+  - enabled: 0
+    path: Assets/Scenes Take 1/6_Underwater.unity
     guid: 9dce358b985752b4cb3e75a44198f827
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 9040145950907b548be1a4106287c3bd
+  - enabled: 1
+    path: Assets/Scenes/White.unity
+    guid: 64b6b5103abb2134ab52126a1674b1da
   m_configObjects: {}

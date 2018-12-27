@@ -15,7 +15,7 @@ public class TriggerAnimation : MonoBehaviour
 
     void Update()
     {
-        if (!anim.isPlaying && transform.position.z - m_Camera.transform.position.z <= 1f)
+        if (!anim.isPlaying && transform.position.z - m_Camera.transform.position.z <= 3f)
         {
             anim.Play();
         }
