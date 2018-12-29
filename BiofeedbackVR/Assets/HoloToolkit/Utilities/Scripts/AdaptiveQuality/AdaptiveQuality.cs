@@ -57,11 +57,11 @@ namespace HoloToolkit.Unity
 
             // Store our refresh rate
 
-#if UNITY_2017_2_OR_NEWER
+//#if UNITY_2017_2_OR_NEWER
             RefreshRate = (int)UnityEngine.XR.XRDevice.refreshRate;
-#else
-            RefreshRate = (int)UnityEngine.VR.VRDevice.refreshRate;
-#endif
+//#else
+ //           RefreshRate = (int)UnityEngine.VR.VRDevice.refreshRate;
+//#endif
             if (RefreshRate == 0)
             {
                 RefreshRate = 60;

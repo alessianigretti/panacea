@@ -52,20 +52,20 @@ namespace HoloToolkit.Unity
                 qualityController.QualityChanged -= QualityChangedEvent;
             }
 
-#if UNITY_2017_2_OR_NEWER
+//#if UNITY_2017_2_OR_NEWER
             UnityEngine.XR.XRSettings.renderViewportScale = 1.0f;
-#else
-            UnityEngine.VR.VRSettings.renderViewportScale = 1.0f;
-#endif
+//#else
+//            UnityEngine.VR.VRSettings.renderViewportScale = 1.0f;
+//#endif
         }
 
         protected void OnPreCull()
         {
-#if UNITY_2017_2_OR_NEWER
+//#if UNITY_2017_2_OR_NEWER
             UnityEngine.XR.XRSettings.renderViewportScale = CurrentScale;
-#else
-            UnityEngine.VR.VRSettings.renderViewportScale = CurrentScale;
-#endif
+//#else
+//            UnityEngine.VR.VRSettings.renderViewportScale = CurrentScale;
+//#endif
         }
 
         private void QualityChangedEvent(int newQuality, int previousQuality)

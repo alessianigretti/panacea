@@ -5,18 +5,18 @@
 using System;
 using UnityEngine;
 
-#if UNITY_2017_2_OR_NEWER
+//#if UNITY_2017_2_OR_NEWER
 using UnityEngine.XR;
 #if UNITY_WSA
 using UnityEngine.XR.WSA;
 using UnityEngine.XR.WSA.Input;
 #endif
-#else
+//#else
 using UnityEngine.VR;
-#if UNITY_WSA
-using UnityEngine.VR.WSA.Input;
-#endif
-#endif
+//#if UNITY_WSA
+//using UnityEngine.VR.WSA.Input;
+//#endif
+//#endif
 
 namespace HoloToolkit.Unity.InputModule
 {
@@ -85,15 +85,15 @@ namespace HoloToolkit.Unity.InputModule
 
             // If our FadeManager is missing, or if we're on the HoloLens
             // Remove this component.
-#if UNITY_2017_2_OR_NEWER
+//#if UNITY_2017_2_OR_NEWER
             if (!XRDevice.isPresent ||
-#if UNITY_WSA
-                !HolographicSettings.IsDisplayOpaque ||
-#endif
+//#if UNITY_WSA
+//                !HolographicSettings.IsDisplayOpaque ||
+//#endif
                 fadeControl == null)
-#else
-            if (VRDevice.isPresent || fadeControl == null)
-#endif
+//#else
+//            if (VRDevice.isPresent || fadeControl == null)
+//#endif
             {
                 Destroy(this);
                 return;
