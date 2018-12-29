@@ -164442,5 +164442,15 @@ PrefabInstance:
       propertyPath: BackgroundColor_TransparentDisplay.b
       value: 0.8666667
       objectReference: {fileID: 0}
+    - target: {fileID: 8418167576089226016, guid: ba249c001ab05cd44b1a093035cce057,
+        type: 3}
+      propertyPath: NearClipPlane_OpaqueDisplay
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418167576089226016, guid: ba249c001ab05cd44b1a093035cce057,
+        type: 3}
+      propertyPath: NearClipPlane_TransparentDisplay
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba249c001ab05cd44b1a093035cce057, type: 3}
