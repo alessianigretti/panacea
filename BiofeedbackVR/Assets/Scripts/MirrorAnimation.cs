@@ -6,6 +6,8 @@ using Cinemachine;
 public class MirrorAnimation : MonoBehaviour
 {
     public float m_DurationInSeconds = 10f;
+    public float m_TargetOffset = -100f;
+    public float m_TargetRoll = 800f;
 
     private Kino.Mirror mirror;
     private float startTime, elapsedTime, offset, roll;
@@ -22,8 +24,8 @@ public class MirrorAnimation : MonoBehaviour
 
         if (elapsedTime <= m_DurationInSeconds)
         {
-            offset = Mathf.Lerp(0, -100, elapsedTime / m_DurationInSeconds);
-            roll = Mathf.Lerp(0, 800, elapsedTime / m_DurationInSeconds);
+            offset = Mathf.Lerp(0, m_TargetOffset, elapsedTime / m_DurationInSeconds);
+            roll = Mathf.Lerp(0, m_TargetRoll, elapsedTime / m_DurationInSeconds);
         }
 
         mirror.SetOffset(offset);
