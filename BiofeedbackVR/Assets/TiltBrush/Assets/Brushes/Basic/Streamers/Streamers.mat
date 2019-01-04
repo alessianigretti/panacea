@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Streamers
   m_Shader: {fileID: 4800000, guid: d3f113ebb941b344eab871b7ff555989, type: 3}
   m_ShaderKeywords: 
@@ -24,7 +25,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _DisplacementIntensity: 0.02
-    - _EmissionGain: 0.4
+    - _EmissionGain: 0.2
     - _InvFade: 1
     - _Scroll1: 1
     - _Scroll2: 3

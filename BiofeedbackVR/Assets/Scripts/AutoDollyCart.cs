@@ -29,7 +29,7 @@ public class AutoDollyCart : MonoBehaviour
             counter = Mathf.Lerp(m_StartLerp, lastWayPoint, elapsedTime / m_DurationInSeconds);
         }
 
-        transform.position = m_DollyPath.EvaluatePositionAtUnit(counter, 0);
+        transform.position = m_DollyPath.EvaluatePosition(counter);
     }
 
     public float GetCounter()

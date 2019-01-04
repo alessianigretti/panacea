@@ -23,6 +23,7 @@ public class AudioEvolution : MonoBehaviour
 
     [Header("Recording")]
     public CsvWriter m_CsvWriter;
+    private bool m_UsingGA;
 
     private Genotype m_Genotype, m_CurrentCopy;
 
@@ -60,29 +61,37 @@ public class AudioEvolution : MonoBehaviour
 
     private void Start()
     {
-        m_Genotype = CreateGenotype();
+        m_UsingGA = m_CsvWriter.m_UsingGA;
 
-        //m_AudioMixer.SetFloat("Pitch", m_Genotype.Features[0]);
-        m_AudioMixer.SetFloat("Echo Wetmix", m_Genotype.Features[1]);
-        //m_AudioMixer.SetFloat("Lowpass Resonance", m_Genotype.Features[2]);
-        m_AudioMixer.SetFloat("Chorus Depth", m_Genotype.Features[3]);
+        if (m_UsingGA)
+        {
+            m_Genotype = CreateGenotype();
+
+            //m_AudioMixer.SetFloat("Pitch", m_Genotype.Features[0]);
+            m_AudioMixer.SetFloat("Echo Wetmix", m_Genotype.Features[1]);
+            //m_AudioMixer.SetFloat("Lowpass Resonance", m_Genotype.Features[2]);
+            m_AudioMixer.SetFloat("Chorus Depth", m_Genotype.Features[3]);
+        }
 
         FirstEvaluation();
     }
 
     private void Update()
     {
-        if (m_CurrentCopy.Features != null)
+        if (m_UsingGA)
         {
-            float currentValue;
-            m_AudioMixer.GetFloat("Pitch", out currentValue);
-            //m_AudioMixer.SetFloat("Pitch", Mathf.Lerp(currentValue, m_CurrentCopy.Features[0], Time.deltaTime / 10));
-            m_AudioMixer.GetFloat("Echo Wetmix", out currentValue);
-            m_AudioMixer.SetFloat("Echo Wetmix", Mathf.Lerp(currentValue, m_CurrentCopy.Features[1], Time.deltaTime / 10));
-            m_AudioMixer.GetFloat("Lowpass Resonance", out currentValue);
-            //m_AudioMixer.SetFloat("Lowpass Resonance", Mathf.Lerp(currentValue, m_CurrentCopy.Features[2], Time.deltaTime / 10));
-            m_AudioMixer.GetFloat("Chorus Depth", out currentValue);
-            m_AudioMixer.SetFloat("Chorus Depth", Mathf.Lerp(currentValue, m_CurrentCopy.Features[3], Time.deltaTime / 10));
+            if (m_CurrentCopy.Features != null)
+            {
+                float currentValue;
+                m_AudioMixer.GetFloat("Pitch", out currentValue);
+                //m_AudioMixer.SetFloat("Pitch", Mathf.Lerp(currentValue, m_CurrentCopy.Features[0], Time.deltaTime / 10));
+                m_AudioMixer.GetFloat("Echo Wetmix", out currentValue);
+                m_AudioMixer.SetFloat("Echo Wetmix", Mathf.Lerp(currentValue, m_CurrentCopy.Features[1], Time.deltaTime / 10));
+                m_AudioMixer.GetFloat("Lowpass Resonance", out currentValue);
+                //m_AudioMixer.SetFloat("Lowpass Resonance", Mathf.Lerp(currentValue, m_CurrentCopy.Features[2], Time.deltaTime / 10));
+                m_AudioMixer.GetFloat("Chorus Depth", out currentValue);
+                m_AudioMixer.SetFloat("Chorus Depth", Mathf.Lerp(currentValue, m_CurrentCopy.Features[3], Time.deltaTime / 10));
+            }
         }
     }
 
@@ -108,11 +117,18 @@ public class AudioEvolution : MonoBehaviour
     IEnumerator RecordFitness(float time)
     {
         yield return new WaitForSeconds(time);
-        
+
         m_CurrentCopy.Fitness = m_HeartrateReader.GetHeartrate();
         m_CsvWriter.Save(m_CurrentCopy.Fitness);
 
-        CompareFitness();
+        if (m_UsingGA)
+        {
+            CompareFitness();
+        }
+        else
+        {
+            StartCoroutine(RecordFitness(m_RecordTime));
+        }
     }
 
     private void Evolve()

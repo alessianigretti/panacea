@@ -5,30 +5,30 @@ using Cinemachine;
 
 public class BreathingExercise : MonoBehaviour
 {
-    public CinemachineVirtualCamera m_Vcam;
+    public AutoDollyCart m_dollyCart;
     public int m_BreatheInSeconds = 7;
     public int m_BreatheOutSeconds = 8;
     public ParticleSystem m_BreatheIn, m_BreatheOut;
-
-    private CinemachineTrackedDolly dolly;
+    
     private float pathPosition;
     private bool triggered = false;
 
-    void Start()
-    {
-        dolly = m_Vcam.GetCinemachineComponent<CinemachineTrackedDolly>();
-    }
-
     void Update()
     {
-        if (!m_BreatheIn.isPlaying && !triggered)
+        if (!triggered)
         {
-            pathPosition = dolly.m_PathPosition;
+            pathPosition = m_dollyCart.GetCounter();
             
-            if (pathPosition > 0.99f)
+            if (pathPosition > 1f)
+            {
+                PlayAndWait(m_BreatheIn, m_BreatheInSeconds);
+            }
+            else if (pathPosition > 3f)
             {
                 triggered = true;
-                PlayAndWait(m_BreatheIn, m_BreatheInSeconds);
+                StopAllCoroutines();
+                m_BreatheIn.emissionRate = 0f;
+                m_BreatheOut.emissionRate = 0f;
             }
         }
 	}

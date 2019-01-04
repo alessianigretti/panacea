@@ -6,8 +6,21 @@ public class CsvWriter : MonoBehaviour
     public int m_ID;
     public string m_UserName;
     public bool m_Recording;
+    public bool m_UsingGA;
 
-    private string m_FilePath = "Data/data.csv";
+    private string m_FilePath;
+
+    private void Start()
+    {
+        if (m_UsingGA)
+        {
+            m_FilePath = "Data/data_ga.csv";
+        }
+        else
+        {
+            m_FilePath = "Data/data_no_ga.csv";
+        }
+    }
 
     public void Save(int heartrate)
     {
