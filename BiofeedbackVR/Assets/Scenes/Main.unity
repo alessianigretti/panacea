@@ -31301,11 +31301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57bb78d507261414f84ce1079f52c3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ID: 1
-  m_UserName: Roberta
+  m_ID: 3
+  m_UserName: Guido
   m_Recording: 1
-  m_UsingGA: 0
-  m_GA: {fileID: 1549326680}
+  m_UsingGA: 1
 --- !u!4 &899720427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: bdeac7e68b4905f44b4226a95a89a1c4,
@@ -39439,6 +39438,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_projectionMatrixMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197936986937762525, guid: c0c16db6b2469d647acb177c59a3e670,
+        type: 3}
+      propertyPath: m_StartLerp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197936986937762525, guid: c0c16db6b2469d647acb177c59a3e670,
+        type: 3}
+      propertyPath: m_DurationInSeconds
+      value: 420
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 892495331, guid: c0c16db6b2469d647acb177c59a3e670, type: 3}
