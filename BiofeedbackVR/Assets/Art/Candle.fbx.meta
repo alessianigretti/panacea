@@ -9,6 +9,8 @@ ModelImporter:
     400000: //RootNode
     400002: Untitled_3_Comet_geo
     400004: Untitled_3_MatteHull_geo
+    2100000: 1caa6d7df0153f543a4b8b5354d39f81_Comet
+    2100002: 79348357432d47468e290e25c112e3aa_MatteHull
     2300000: Untitled_3_Comet_geo
     2300002: Untitled_3_MatteHull_geo
     3300000: Untitled_3_Comet_geo
@@ -49,6 +51,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -73,6 +76,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

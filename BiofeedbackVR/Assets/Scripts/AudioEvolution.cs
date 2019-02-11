@@ -6,20 +6,20 @@ public class AudioEvolution : MonoBehaviour
 {
     [Header("Audio")]
     public AudioMixer m_AudioMixer;
-    public float m_MinPitch = 0.5f;
-    public float m_MaxPitch = 1.5f;
+    public float m_MinPitch = 50f;
+    public float m_MaxPitch = 150f;
     public float m_MinWetmix = 0f;
     public float m_MaxWetmix = 100f;
     public float m_MinResonance = 1f;
     public float m_MaxResonance = 10f;
     public float m_MinDepth = 0f;
-    public float m_MaxDepth = 1f;
+    public float m_MaxDepth = 0.1f;
 
     [Header("Evolution")]
     public HeartrateReader m_HeartrateReader;
     [Range(0f, 1f)]
-    public float m_MutationProbability;
-    public float m_RecordTime = 60f;
+    public float m_MutationProbability = 0.8f;
+    public float m_RecordTime = 10f;
 
     [Header("Recording")]
     public CsvWriter m_CsvWriter;
@@ -61,7 +61,7 @@ public class AudioEvolution : MonoBehaviour
 
     private void Start()
     {
-        m_UsingGA = m_CsvWriter.m_UsingGA;
+        m_UsingGA = m_CsvWriter.m_UserData.UsingGA;
 
         if (m_UsingGA)
         {
@@ -83,11 +83,11 @@ public class AudioEvolution : MonoBehaviour
             if (m_CurrentCopy.Features != null)
             {
                 float currentValue;
-                m_AudioMixer.GetFloat("Pitch", out currentValue);
+                //m_AudioMixer.GetFloat("Pitch", out currentValue);
                 //m_AudioMixer.SetFloat("Pitch", Mathf.Lerp(currentValue, m_CurrentCopy.Features[0], Time.deltaTime / 10));
                 m_AudioMixer.GetFloat("Echo Wetmix", out currentValue);
                 m_AudioMixer.SetFloat("Echo Wetmix", Mathf.Lerp(currentValue, m_CurrentCopy.Features[1], Time.deltaTime / 10));
-                m_AudioMixer.GetFloat("Lowpass Resonance", out currentValue);
+                //m_AudioMixer.GetFloat("Lowpass Resonance", out currentValue);
                 //m_AudioMixer.SetFloat("Lowpass Resonance", Mathf.Lerp(currentValue, m_CurrentCopy.Features[2], Time.deltaTime / 10));
                 m_AudioMixer.GetFloat("Chorus Depth", out currentValue);
                 m_AudioMixer.SetFloat("Chorus Depth", Mathf.Lerp(currentValue, m_CurrentCopy.Features[3], Time.deltaTime / 10));
@@ -101,9 +101,9 @@ public class AudioEvolution : MonoBehaviour
 
         genotype.Features = new float[4];
 
-        genotype.Features[0] = Random.Range(m_MinPitch, m_MaxPitch) / 100f;
+        //genotype.Features[0] = Random.Range(m_MinPitch, m_MaxPitch) / 100f;
         genotype.Features[1] = Random.Range(m_MinWetmix, m_MaxWetmix) / 100f;
-        genotype.Features[2] = Random.Range(m_MinResonance, m_MaxResonance);
+        //genotype.Features[2] = Random.Range(m_MinResonance, m_MaxResonance);
         genotype.Features[3] = Random.Range(m_MinDepth, m_MaxDepth);
 
         return genotype;
@@ -140,9 +140,9 @@ public class AudioEvolution : MonoBehaviour
         // mutation
         if (Random.Range(0f, 1f) < m_MutationProbability)
         {
-            m_CurrentCopy.Features[0] = Random.Range(m_MinPitch, m_MaxPitch) / 100f;
+            //m_CurrentCopy.Features[0] = Random.Range(m_MinPitch, m_MaxPitch) / 100f;
             m_CurrentCopy.Features[1] = Random.Range(m_MinWetmix, m_MaxWetmix) / 100f;
-            m_CurrentCopy.Features[2] = Random.Range(m_MinResonance, m_MaxResonance);
+            //m_CurrentCopy.Features[2] = Random.Range(m_MinResonance, m_MaxResonance);
             m_CurrentCopy.Features[3] = Random.Range(m_MinDepth, m_MaxDepth);
         }
 
@@ -167,9 +167,9 @@ public class AudioEvolution : MonoBehaviour
         }
 
         float pitch, wetmix, resonance, depth;
-        m_AudioMixer.GetFloat("Pitch", out pitch);
+        //m_AudioMixer.GetFloat("Pitch", out pitch);
         m_AudioMixer.GetFloat("Echo Wetmix", out wetmix);
-        m_AudioMixer.GetFloat("Lowpass Resonance", out resonance);
+        //m_AudioMixer.GetFloat("Lowpass Resonance", out resonance);
         m_AudioMixer.GetFloat("Chorus Depth", out depth);
         //Debug.Log("Pitch " + pitch);
         Debug.Log("Wetmix " + wetmix);

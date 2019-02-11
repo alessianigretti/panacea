@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PbrOpaqueDoubleSided_FrenchTree_PontDuGard_LOWMESH_textured
-  m_Shader: {fileID: 4800000, guid: fdd67cb064f9adf4ea9ff64d948f9387, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6d2e1c10cde105b49a4a3289503dae42, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

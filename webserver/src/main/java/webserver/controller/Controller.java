@@ -25,8 +25,15 @@ public class Controller
         return heartrate;
     }
 
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public int getSlash()
+    {
+        return 1;
+    }
 
-
-
-
+    @RequestMapping(path = "/favicon.ico", method = RequestMethod.GET)
+    public int getFavIcon()
+    {
+        return 1;
+    }
 }

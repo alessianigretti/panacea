@@ -1,21 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Net;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.Networking;
 
 public class HeartrateReader : MonoBehaviour
 {
-    public string m_Url = "https://clever-deer-30.localtunnel.me/heartrate/GET";
-
+    private string m_ServerUrl;
     private int m_Heartrate;
 
     void Start()
     {
         StartCoroutine(Wait(.5f));
+        m_ServerUrl = GetLocalIPAddress() + ":8080/heartrate/GET";
     }
 
     public int GetHeartrate()
     {
         return m_Heartrate;
+    }
+
+    private static string GetLocalIPAddress()
+    {
+        var host = Dns.GetHostEntry(Dns.GetHostName());
+        foreach (var ip in host.AddressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            {
+                return ip.ToString();
+            }
+        }
+        throw new Exception("No network adapters with an IPv4 address in the system!");
     }
 
     IEnumerator Wait(float seconds)
@@ -27,12 +43,9 @@ public class HeartrateReader : MonoBehaviour
 
     IEnumerator GetInfo()
     {
-        UnityWebRequest www = UnityWebRequest.Get(m_Url);
+        UnityWebRequest www = UnityWebRequest.Get(m_ServerUrl);
 
         yield return www.SendWebRequest();
-
-        //m_Heartrate = System.Convert.ToInt32(www.downloadHandler.text);
-        //Debug.Log(m_Heartrate);
 
         int hr;
         if (System.Int32.TryParse(www.downloadHandler.text, out hr))
