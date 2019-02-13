@@ -27,7 +27,6 @@ public class CsvWriter : MonoBehaviour
         if (m_UserData.Id != "")
         {
         string rowData = m_UserData.Id + "," + m_UserData.Name + "," + DateTime.Now.ToString() + "," + heartrate.ToString();
-        //string rowData = " " + "," + " " + "," + DateTime.Now.ToString() + "," + heartrate.ToString();
 
         string[] lines = System.IO.File.ReadAllLines(m_FilePath);
             for (int i = 0; i < lines.Length; i++)

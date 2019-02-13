@@ -13,7 +13,8 @@ public class HeartrateReader : MonoBehaviour
     void Start()
     {
         StartCoroutine(Wait(.5f));
-        m_ServerUrl = GetLocalIPAddress() + ":8080/heartrate/GET";
+        m_ServerUrl = "http://" + GetLocalIPAddress() + ":8080/heartrate/GET";
+        Debug.Log(m_ServerUrl);
     }
 
     public int GetHeartrate()
