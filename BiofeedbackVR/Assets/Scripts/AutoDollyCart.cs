@@ -3,35 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+/// <summary>
+/// 
+/// </summary>
 public class AutoDollyCart : MonoBehaviour
 {
-    public float m_DurationInSeconds = 20f;
+    public float m_DurationInSeconds;
     public CinemachineSmoothPath m_DollyPath;
 
-    [Header("Debug")]
-    public int m_StartLerp = 0;
-    
-    private int lastWayPoint;
+    private int startLerp = 0;
+    private int lastWaypoint;
     private float startTime, elapsedTime, counter;
 
-    void Awake()
+    /// <summary>
+    /// Called when script is loaded. Initialises waypoints and time.
+    /// </summary>
+    private void Awake()
     {
-        lastWayPoint = m_DollyPath.m_Waypoints.Length - 1;
+        lastWaypoint = m_DollyPath.m_Waypoints.Length - 1;
         startTime = Time.time;
     }
 
-    void Update()
+    /// <summary>
+    /// Called once per frame.
+    /// Linearly interpolates between start and end int values.
+    /// Assigns interpolated value to DollyPath every frame.
+    /// </summary>
+    private void Update()
     {
         elapsedTime = Time.time - startTime;
 
         if (elapsedTime <= m_DurationInSeconds)
         {
-            counter = Mathf.Lerp(m_StartLerp, lastWayPoint, elapsedTime / m_DurationInSeconds);
+            counter = Mathf.Lerp(startLerp, lastWaypoint, elapsedTime / m_DurationInSeconds);
         }
 
         transform.position = m_DollyPath.EvaluatePosition(counter);
     }
 
+    /// <summary>
+    /// Returns interpolated value at current time.
+    /// </summary>
+    /// <returns>Interpolated value.</returns>
     public float GetCounter()
     {
         return counter;

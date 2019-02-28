@@ -2,6 +2,9 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Stores data from UI elements to CachedData struct.
+/// </summary>
 public class SaveData : MonoBehaviour
 {
     public InputField m_Id, m_UserName;
@@ -10,6 +13,9 @@ public class SaveData : MonoBehaviour
     [HideInInspector]
     public CachedData m_CachedData;
 
+    /// <summary>
+    /// Struct to temporarily cache user data.
+    /// </summary>
     public struct CachedData
     {
         private string cachedIp, cachedId, cachedName;
@@ -33,13 +39,19 @@ public class SaveData : MonoBehaviour
             set { cachedUsingGA = value; }
         }
     }
-    
 
-    void Start()
+    /// <summary>
+    /// Called before the first frame update.
+    /// Calls DontDestroyOnLoad on script to make user data persist throughout scenes.
+    /// </summary>
+    private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
     }
 
+    /// <summary>
+    /// Stores data to CachedData struct and loads first scene.
+    /// </summary>
     public void StoreData()
     {
         if (m_Recording.isOn)

@@ -1,18 +1,25 @@
 import * as messaging from "messaging";
 
+/*
+ * Displays data from companion to console and initiates posting to local web server.
+ */
 function displayData() {
   messaging.peerSocket.addEventListener("message", (evt) => {
     if (evt.data) {
       console.log("Heart rate on companion: " + evt.data.hrm.heartRate);
       
-      postData('https://clever-deer-30.localtunnel.me/heartrate/', {hrm: evt.data.hrm.heartRate})
+      // Post data to local web server
+      postData('http://192.168.1.15:8080/heartrate/', {hrm: evt.data.hrm.heartRate})
       .then(data => console.log(JSON.stringify(data)))
       .catch(error => console.error(error));
     }})
 };
 
-
+/*
+ * Posts to local web server via JSON fetch request.
+ */
 function postData(url = "", data = {}) {
+  // Post data as json
   return fetch(url, {
         method: "POST",
         headers: {
@@ -25,9 +32,4 @@ function postData(url = "", data = {}) {
     .then((messages) => {console.log("messages");});
 }
 
-function get() {
-  fetch('https://horrible-impala-72.localtunnel.me/heartrate/GET?source=fitbit')
-  .then(response => console.log(response.json().then(data => ({data: data}))))
-  .then(res => {console.log(res.data)});
-}
 displayData();

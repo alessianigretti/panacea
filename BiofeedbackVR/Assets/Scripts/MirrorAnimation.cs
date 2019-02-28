@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+/// <summary>
+/// Handles animation of background kaleidoscope through manipulation
+/// of offset and roll values.
+/// </summary>
 public class MirrorAnimation : MonoBehaviour
 {
     public float m_DurationInSeconds = 10f;
@@ -12,13 +16,20 @@ public class MirrorAnimation : MonoBehaviour
     private Kino.Mirror mirror;
     private float startTime, elapsedTime, offset, roll;
 
-    void Awake()
+    /// <summary>
+    /// Called when script is loaded. Initialises mirror and time.
+    /// </summary>
+    private void Awake()
     {
         mirror = GetComponent<Kino.Mirror>();
         startTime = Time.time;
     }
 
-    void Update()
+    /// <summary>
+    /// Called once per frame.
+    /// Linearly interpolates and assigns values to offset and roll.
+    /// </summary>
+    private void Update()
     {
         elapsedTime = Time.time - startTime;
 
