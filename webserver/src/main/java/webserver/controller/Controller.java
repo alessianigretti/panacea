@@ -38,26 +38,4 @@ public class Controller
     {
         return heartrate;
     }
-
-    /**
-     * Gets slash.
-     *
-     * @return the slash
-     */
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public int getSlash()
-    {
-        return 1;
-    }
-
-    /**
-     * Gets fav icon.
-     *
-     * @return the fav icon
-     */
-    @RequestMapping(path = "/favicon.ico", method = RequestMethod.GET)
-    public int getFavIcon()
-    {
-        return 1;
-    }
 }
