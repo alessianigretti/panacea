@@ -22,8 +22,6 @@ AudioMixerController:
     name: Chorus Depth
   - guid: e14b62eca009b2f44ae7b43b0fb2a666
     name: Echo Wetmix
-  - guid: 4fb8370c17f40d14d8c5a36e2dbc1250
-    name: Lowpass Resonance
   m_AudioMixerGroupViews:
   - guids:
     - 82de0aef58b08a9478ba6427c889a580
@@ -45,7 +43,6 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 24400004}
   - {fileID: 244461895737577584}
-  - {fileID: 244182500301452626}
   - {fileID: 244750401164130608}
   m_UserColorIndex: 0
   m_Mute: 0
@@ -145,24 +142,6 @@ AudioMixerSnapshotController:
     dfd3cabf4b1112c42a3cbe0051f516a9: 9.5
     e7e1dadf73be07646afd717844b9798e: 0
   m_TransitionOverrides: {}
---- !u!244 &244182500301452626
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: fd6a688db0016ad4d9db2afb282e8fc9
-  m_EffectName: Lowpass
-  m_MixLevel: 6ea2de33d5280544f82b0e0672f4649e
-  m_Parameters:
-  - m_ParameterName: Cutoff freq
-    m_GUID: f16269983624c924c893d228838be41e
-  - m_ParameterName: Resonance
-    m_GUID: 4fb8370c17f40d14d8c5a36e2dbc1250
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
 --- !u!244 &244461895737577584
 AudioMixerEffectController:
   m_ObjectHideFlags: 3

@@ -4,7 +4,7 @@ using UnityEngine;
 using Cinemachine;
 
 /// <summary>
-/// 
+/// Automatically moves the cart along the Cinemachine dolly path.
 /// </summary>
 public class AutoDollyCart : MonoBehaviour
 {
