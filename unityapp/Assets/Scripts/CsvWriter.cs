@@ -17,15 +17,20 @@ public class CsvWriter : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        m_UserData = GameObject.Find("UserData").GetComponent<SaveData>().m_CachedData;
+        SaveData data = GameObject.Find("UserData").GetComponent<SaveData>();
 
-        if (m_UserData.UsingGA)
+        if (data.m_Recording)
         {
-            m_FilePath = "C:/Users/Alessia/Desktop/Data/data_ga.csv";
-        }
-        else
-        {
-            m_FilePath = "C:/Users/Alessia/Desktop/Data/data_no_ga.csv";
+            m_UserData = data.m_CachedData;
+
+            if (m_UserData.UsingGA)
+            {
+                m_FilePath = "C:/Users/Alessia/Desktop/Data/data_ga.csv";
+            }
+            else
+            {
+                m_FilePath = "C:/Users/Alessia/Desktop/Data/data_no_ga.csv";
+            }
         }
     }
 
@@ -35,7 +40,7 @@ public class CsvWriter : MonoBehaviour
     /// <param name="heartrate">Heartrate to write to CSV file.</param>
     public void Save(int heartrate)
     {
-        if (m_UserData.Id != "")
+        if (m_FilePath != null && m_UserData.Id != "")
         {
         string rowData = m_UserData.Id + "," + m_UserData.Name + "," + DateTime.Now.ToString() + "," + heartrate.ToString();
 
